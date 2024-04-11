@@ -1,0 +1,24 @@
+{
+   "users":[
+    {
+    "name":"sneha",
+    "email":"sneha@31gmail.com",
+    "password":"sne@#134"
+   },
+   {
+    "name":"nowsheen",
+    "email":"now@43gmail.com",
+    "password":"now$*185"
+   },
+   {
+    "name":"sandy",
+    "email":"sandy@98gmail.com",
+    "password":"san@#1097"
+   },
+   {
+    "name":"darshini",
+    "email":"darsh@65gmail.com",
+    "password":"dars%!523"
+   }
+]
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Table with Filtering</title>
+<style>
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  table {
+    border-collapse: collapse;
+    width: 50%;
+    margin-top: 40px;
+  }
+  th, td {
+    border: 1px solid #ae68f4;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color:#cba7f0;
+  }
+  .filter-container {
+    margin-bottom: 10px;
+  }
+  .filter-select {
+    padding: 5px 10px;
+  }
+  .form-container {
+    width: 40%;
+    margin-top:40px;
+  }
+  .form-select, .form-input, .form-button {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    padding: 5px 10px;
+  }
+  .form-button {
+    background-color:#cba7f0;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .form-button:hover {
+    background-color: #cba7f0;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="filter-container">
+    <select class="filter-select" id="filterSelect" onchange="filterTasks()">
+      <option value="all">All</option>
+      <option value="work">Work</option>
+      <option value="personal">Personal</option>
+    </select>
+  </div>
+  <table id="taskTable">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Sub_category</th>
+        <th>Duration</th>
+        <th>Task</th>
+      </tr>
+    </thead>
+    <tbody id="taskTableBody"></tbody>
+  </table>
+  <div class="form-container">
+    <form id="taskForm">
+      <label for="category">Category:</label>
+      <select class="form-select" id="category" name="category">
+        <option value="work">Work</option>
+        <option value="personal">Personal</option>
+      </select>
+      <label for="subCategory">Sub Category:</label>
+      <select class="form-select" id="subCategory" name="subCategory">
+        <option value="subWork">Meeting</option>
+        <option value="subPersonal">Project</option>
+      </select>
+      <label for="task">Duration:</label>
+      <input type="text" class="form-input" id="duration" name="duration" value="00:00:00">
+      <button type="button" class="form-button" onclick="startTask()">Start</button>
+      <button type="button" class="form-button" onclick="stopTask()">Stop</button>
+      <hr>
+      <label for="task">Task:</label>
+      <textarea class="form-input" id="task" name="task"></textarea>
+      <button type="submit" class="form-button">ADD</button>
+    </form>
+  </div>
+</div>
+
+<script src="TasksMain.js"></script>
+<script src="Timer.js"></script>
+
+</body>
+</html>
